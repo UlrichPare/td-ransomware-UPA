@@ -1,0 +1,20 @@
+Reponses 
+Q1/
+Le nom de l'algorithme de chiffrement utilisé est le chiffrement par XOR. 
+Un chiffrement de ce type est n'est pas le plus robuste qui existe.
+Le premier soucis est que si l'attaquant connaît la clé, il peut facilement déchiffrer le message. 
+Cependant meme s'il ne la connait pas mais qu'il a accès a deux messages chiffré avec la meme clé,
+il sera simple pour lui de l'avoir en faisant juste un xor entre les deux messages
+
+
+Q2/ SI on hache directement le sel et la clé, elle deviendra vulnérable aux attaques 
+par force brute comme on l'a vu dans le dernier tp et va par la meme occasion aussi exposer le sel. 
+Utiliser un HMAC assure l'intégrité car elle utilise une clé secrète pour renforcer la sécurité.
+
+
+Q3/ Si on ne vérifie pas l'existence de `token.bin` avant d'en créer un, on pourait écraser 
+les données déja existante
+
+Q4/ Pour vérifier que la clé est correcte, On dérive un clé
+à partir du sel chargé et de la clé fournie. Ensuite on compare cette clé avec celle 
+qu'on a utilisé pour chiffrer les données . Si elles correspondent, c'est la bonne clé
